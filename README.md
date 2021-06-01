@@ -3,7 +3,7 @@
 Feel free to leverage this project as your first Drone project. Can learn
 about the basics about [Drone](https://drone.io/) from the project site
 and the [project itself](https://github.com/drone/drone). 
-
+ 
 A video walkthrough of the Drone installation steps can be found on the
 Harness Blog: [Your First Drone Installation, Build, and Push](https://harness.io/2020/08/your-first-harness-ci-installation/) 
 
