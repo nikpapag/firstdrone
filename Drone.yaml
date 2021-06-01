@@ -20,6 +20,7 @@ steps:
     repo: nikpap/myfirstdrone
     auto_tag: true
     auto_tag_suffix: drone-build
+    
  
 - name: harness-deploy
   image: rlachhman/drone-harness-trigger:1.0.0
