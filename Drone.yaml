@@ -9,8 +9,8 @@ steps:
   image: golang:1.13
   commands:
     - "go build -o ./myapp"
- when:
-   branch:
+  when:
+    branch:
      include:
      - master
 
