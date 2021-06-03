@@ -13,6 +13,7 @@ steps:
     branch:
      include:
      - master
+     
 
 - name: publish  
   image: plugins/docker
