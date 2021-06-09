@@ -24,7 +24,7 @@ steps:
       from_secret: aws_access_key_id
     secret_key:
       from_secret: aws_secret_access_key
-    registry: 759984737373.dkr.ecr.eu-west-2.amazonaws.com/nikp-ecr
+    registry: 759984737373.dkr.ecr.eu-west-2.amazonaws.com
     region: eu-west-2
     
 - name: harness-deploy
