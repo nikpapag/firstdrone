@@ -18,7 +18,7 @@ steps:
 - name: publish  
   image: plugins/ecr
   settings:
-    create_repository: true
+    create_repository: false
     repo: nikp-ecr
     access_key:
       from_secret: aws_access_key_id
