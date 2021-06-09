@@ -35,7 +35,7 @@ steps:
     secret_key:
       from_secret: aws_secret_access_key
     repo: nikp-ecr
-    registry: 759984737373.dkr.ecr.us-east-1.amazonaws.com
+    registry: 759984737373.dkr.ecr.eu-west-2.amazonaws.com/nikp-ecr
     
  
 - name: harness-deploy
