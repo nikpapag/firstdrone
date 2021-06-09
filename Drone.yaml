@@ -34,7 +34,7 @@ steps:
       from_secret: aws_access_key_id
     secret_key:
       from_secret: aws_secret_access_key
-    repo: bar
+    repo: nikp-ecr
     registry: 759984737373.dkr.ecr.us-east-1.amazonaws.com
     
  
