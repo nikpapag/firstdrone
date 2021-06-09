@@ -26,6 +26,17 @@ steps:
     auto_tag: true
     auto_tag_suffix: drone-build
     
+- name: publish  
+  image: plugins/ecr
+  settings:
+    create_repository: true
+    access_key:
+      from_secret: aws_access_key_id
+    secret_key:
+      from_secret: aws_secret_access_key
+    repo: bar
+    registry: 759984737373.dkr.ecr.us-east-1.amazonaws.com
+    
  
 - name: harness-deploy
   image: rlachhman/drone-harness-trigger:1.0.0
