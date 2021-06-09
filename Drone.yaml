@@ -20,7 +20,11 @@ steps:
   settings:
     create_repository: true
     repo: firstdrone
-    registry: public.ecr.aws/s5j6m9t7/nikp-ecr-public
+    access_key:
+      from_secret: aws_access_key_id
+    secret_key:
+      from_secret: aws_secret_access_key
+    registry: 759984737373.dkr.ecr.eu-west-2.amazonaws.com/nikp-ecr
     region: eu-west-2
     
 - name: harness-deploy
