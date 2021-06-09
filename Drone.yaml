@@ -25,8 +25,15 @@ steps:
     repo: nikpap/myfirstdrone
     auto_tag: true
     auto_tag_suffix: drone-build
+
+- name: publish  
+  image: plugins/ecr
+  settings:
+    create_repository: true
+    repo: firstdrone
+    registry: public.ecr.aws/s5j6m9t7/nikp-ecr-public
+    region: eu-west-2
     
- 
 - name: harness-deploy
   image: rlachhman/drone-harness-trigger:1.0.0
   settings:  
