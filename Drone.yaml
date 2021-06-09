@@ -13,18 +13,7 @@ steps:
     branch:
      include:
      - master
-     
 
-- name: publish  
-  image: plugins/docker
-  settings:
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
-    repo: nikpap/myfirstdrone
-    auto_tag: true
-    auto_tag_suffix: drone-build
 
 - name: publish  
   image: plugins/ecr
