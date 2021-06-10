@@ -15,6 +15,7 @@ steps:
      - master
 
 
+
 - name: publish  
   image: plugins/ecr
   settings:
