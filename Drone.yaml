@@ -13,6 +13,16 @@ steps:
     branch:
      include:
      - master
+---
+- name: build
+  image: golang:1.13
+  commands:
+    - "go build -o ./myapp"
+  when:
+    branch:
+     include:
+     - master
+
 
 - name: publish  
   image: plugins/ecr
