@@ -13,8 +13,8 @@ steps:
     branch:
      include:
      - master
----
-- name: build
+     
+- name: buildPararell
   image: golang:1.13
   commands:
     - "go build -o ./myapp"
@@ -35,6 +35,9 @@ steps:
       from_secret: aws_secret_access_key
     registry: 759984737373.dkr.ecr.eu-west-2.amazonaws.com
     region: eu-west-2
+    depends_on:
+     - build
+     - buildPararell
     
 - name: harness-deploy
   image: rlachhman/drone-harness-trigger:1.0.0
@@ -49,5 +52,11 @@ steps:
       from_secret: harness_webhookid
     harnessartifactname: "harness_todolist-sample"
     artifactversion: "81"
-    harnessservicename: "order-service"
+    harnessservicename: "order-service"\
+    depends_on:
+     - build
+     - buildPararell
+    
+    
+   
     
