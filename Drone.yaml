@@ -14,7 +14,7 @@ steps:
   settings:
     restore: true
     mount:
-      - /ccache/data
+      - ./node_modules
 
 
 - name: build
@@ -35,17 +35,6 @@ steps:
      include:
      - master
 
-- name: restore-cache
-  image: drillster/drone-volume-cache
-  volumes:
-  - name: cache
-    path: /cache
-  settings:
-    restore: true
-    mount:
-      - ./node_modules
-
-
 - name: publish  
   image: plugins/ecr
   settings:
@@ -64,6 +53,6 @@ steps:
 volumes:
   - name: cache
     host: 
-      path: /tmp/cache
+      path: /ccache/data
    
     
