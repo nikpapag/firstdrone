@@ -26,14 +26,7 @@ steps:
      include:
      - master
      
-- name: buildPararell
-  image: golang:1.13
-  commands:
-    - "go build -o ./myapp"
-  when:
-    branch:
-     include:
-     - master
+
 
 - name: publish  
   image: plugins/ecr
@@ -46,9 +39,7 @@ steps:
       from_secret: aws_secret_access_key
     registry: 759984737373.dkr.ecr.eu-west-2.amazonaws.com
     region: eu-west-2
-    depends_on:
-     - build
-     - buildPararell
+
 
 volumes:
   - name: cache
