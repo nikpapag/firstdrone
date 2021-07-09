@@ -16,7 +16,6 @@ steps:
     mount:
       - ./node_modules
 
-   
 
 - name: build
   image: golang:1.13
