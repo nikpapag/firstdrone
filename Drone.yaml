@@ -10,12 +10,13 @@ steps:
   image: drillster/drone-volume-cache
   volumes:
   - name: cache
-    path: /cache
+    path: /ccache/data
   settings:
     restore: true
     mount:
       - ./node_modules
 
+   
 
 - name: build
   image: golang:1.13
