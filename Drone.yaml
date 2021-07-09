@@ -6,7 +6,15 @@ type: kubernetes
 name: default 
 steps:
 
-
+- name: restore-cache
+  image: drillster/drone-volume-cache
+  volumes:
+  - name: cache
+    path: /cache
+  settings:
+    restore: true
+    mount:
+      - ./node_modules
 
 
 - name: build
@@ -33,9 +41,4 @@ steps:
     region: eu-west-2
 
 
-volumes:
-  - name: cache
-    host: 
-      path: /ccache/data
-   
     
