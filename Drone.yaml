@@ -43,3 +43,8 @@ steps:
 
 
     
+# the cache storage at your host
+volumes:
+  - name: cache
+    host:
+      path: /ccache/data
