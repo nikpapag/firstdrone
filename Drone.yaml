@@ -6,17 +6,6 @@ type: kubernetes
 name: default 
 steps:
 
-- name: restore-cache
-  image: drillster/drone-volume-cache
-  volumes:
-  - name: cache
-    path: /ccache/data
-  settings:
-    restore: true
-    mount:
-      - ./node_modules
-
-
 - name: build
   image: golang:1.13
   commands:
@@ -26,8 +15,6 @@ steps:
      include:
      - master
      
-
-
 - name: publish  
   image: plugins/ecr
   settings:
@@ -39,11 +26,21 @@ steps:
       from_secret: aws_secret_access_key
     registry: 759984737373.dkr.ecr.eu-west-2.amazonaws.com
     region: eu-west-2
-
-
     
-# the cache storage at your host
-volumes:
-  - name: cache
-    host:
-      path: /ccache/data
+- name: harness-deploy
+  image: rlachhman/drone-harness-trigger:1.0.0
+  settings:  
+    accountid:
+      from_secret: harness_accountid
+    apikey: 
+      from_secret: harness_apikey
+    applicationid: 
+      from_secret: harness_applicationid
+    harnesswebhookid: 
+      from_secret: harness_webhookid
+    harnessartifactname: "harness_todolist-sample"
+    artifactversion: "81"
+    harnessservicename: "order-service"
+
+
+  
