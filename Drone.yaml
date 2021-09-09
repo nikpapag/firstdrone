@@ -27,6 +27,7 @@ steps:
     registry: 759984737373.dkr.ecr.eu-west-2.amazonaws.com
     region: eu-west-2
     
+    
 - name: harness-deploy
   image: rlachhman/drone-harness-trigger:1.0.0
   settings:  
