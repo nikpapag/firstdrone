@@ -28,6 +28,7 @@ steps:
     region: eu-west-2
     
     
+    
 - name: harness-deploy
   image: rlachhman/drone-harness-trigger:1.0.0
   settings:  
