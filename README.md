@@ -13,6 +13,7 @@ of the Go Lang class. The Drone.yaml is wired to Drone out-of-box events.
 * Main Go
 * Dockerfile
 * Drone.yaml 
+* 
 
 Make sure in your Drone.yaml to edit the Docker Registry to be yours. The
 example `repo: rlachhman/myrepo` needs to be updated to yours. 
